@@ -1,0 +1,215 @@
+.menu-wrap {
+    position: fixed; /* for it to be fixed at top*/
+    top: 0;
+    right: 0;
+    z-index: 1; /*to ensure it's on top*/
+}
+
+/*the toggler is the checkbox*/
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer; /*cursor should be a pointer when we hover over it*/
+    width: 50px;
+    height: 50px;
+    opacity: 0; /*to make checkbox invisible*/
+}
+
+.fixed-nav {
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    top:0;
+    right:0;
+    background: var(--menu-primary); 
+    z-index: -1;
+    padding: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+
+.home-nav {
+    top: 21px;
+    left: 85px;
+    font-family: Gameplay;
+    font-size: 3vw;
+    position: fixed;
+    z-index: 1;
+    color: var(--green);
+    letter-spacing: 0.5vh;
+    text-shadow: 3px -3px 9px #0078a6;   
+    visibility: hidden;
+}
+
+/*Square the hamburger will be inside */
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 40px; 
+    height: 40px;
+    padding: 1rem; /*for the lines to not be right up against the side*/
+    
+    /*using root variables stated in the style.css will work because the link href for style.css
+    *is above the href for menu.css in index.html, hence we inherit the variables of the one claimed on top*/
+    
+    background: var(--menu-primary); 
+    display: flex; /*to align to the center*/
+    align-items: center;
+    justify-content: center;
+}
+
+/*Lines of Hamburger */
+
+/*Middle Line*/
+.menu-wrap .hamburger >div { /*the > targets the first div inside the hamburger class*/
+    position: relative;
+    width: 100%;
+    height: 2px;
+    /* background-color: white; */
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease; /*transition on all properties (eg. pseudo included) of 0.4s with ease, making it rotate nicely*/
+}
+
+/*top and bottom lines */
+.menu-wrap .hamburger >div:before, 
+.menu-wrap .hamburger >div:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px; /*moving both hamburger lines above*/
+    width: 80%;
+    height: 2px;
+    background: inherit; /*inherit the background eg. white from the main element*/
+}
+/*bottom line*/
+.menu-wrap .hamburger >div:after {
+    top: 10px; /*moving it opposite way (down) to be visible*/
+}
+
+/* Toggler animate */
+/*applying this to the checked state, styling the first div in hamburger, not the checkbox*/
+.menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+/*Turn lines into X */
+/*when it's checked, apply the following to the before and after elements of the first div in hamburger*/
+.menu-wrap .toggler:checked + .hamburger > div:before, 
+.menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+    width: 100%;
+}
+
+/*Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+}
+
+/*Show Hamburger Menu*/
+
+/*targetting the menu inside when the toggler is checked */
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible; /*visible because the bun has been clicked */
+}
+
+/*for the opening menu to transition smoothly and for the circle to expand from scale 0 (set further down) to scale 1*/
+.menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+/*Make Menu Links Visible - initially set at opacity : 0 further down*/
+.menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+}
+
+/*the menu contents of the hamburger pop-up*/
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; /*width and height covering entire viewport area*/
+    height: 100%;
+    visibility: hidden; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*adding the circle animation */
+.menu-wrap .menu > div {
+    background: var(--menu-overlay);
+    border-radius: 40%; /*for circle effect*/
+    width: 160vw; /*160 for it to go outside of the screen*/
+    height: 160vw;
+    display: flex;
+    flex: none; /*to prevent unwanted oval shape from occuring*/
+    align-items: center;
+    justify-content: center;
+    transform: scale(0); 
+    transition: all 0.4s ease; /*for it to transition smoothly*/
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+    color: var(--green);;
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-family: CatV, sans-serif;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    transition: color 0.4s ease; /*adding a transition to the colour of the text*/
+}
+
+.menu-wrap .menu > div > div > ul > li > .menu-contact > li {
+    display: inline;
+}
+
+.menu-wrap .menu > div > div > ul > li > .menu-contact > li > .menu-link-icons{
+    width: 1rem;
+    height: auto;
+    box-shadow:3px -7px 71px #0078a6, 3px 13px 87px #0078a6;
+    border-radius: 11px;
+}
+
+
+/**for tablet and mobile viewing**/
+@media only screen and (max-width: 798px) {
+    .home-nav {
+        visibility: visible;
+        left: 46px;
+      }
+
+      .fixed-nav {
+        /* background-color: var(--nav-colour); */
+        
+    }
+
+    .menu-wrap .hamburger {
+        margin-top: -4px;
+    }
+  }
+
+  @media only screen and (max-width: 412px) {
+    .home-nav {
+        top: 23px;
+        left: 34px;
+      }
+  }

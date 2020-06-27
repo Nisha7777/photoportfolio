@@ -1,0 +1,624 @@
+/************
+  *
+  * GRIDS
+  *
+  **/
+
+body {
+  background-color: black;
+  margin: 0;
+  color: white;
+  font-size: 1em;
+  padding: 30px;
+}
+
+img {
+  width: 100%;
+}
+
+/*declaring root variables*/
+:root {
+  --pink: #D600FF;
+  --darkblue: #001EFF;
+  --background: black;
+  --lightblue: #00B8FF;
+  --green: #00FF9F;
+  --menu-primary:rgba(65, 65, 65, 0);
+  --nav-colour:rgba(0, 0, 0, 1);
+  --menu-overlay: rgba(26, 19, 50, 0.85);
+  --menu-speed: 0.75s; /*can easily change the menu speed if necessary by setting as root variable*/
+} 
+
+/*declaring a new font*/
+@font-face {
+  font-family: CatV;
+  src: url(CatV.ttf);
+}
+
+/*declaring a new font*/
+@font-face {
+  font-family: Gameplay;
+  src: url(Gameplay.ttf);
+}
+
+
+/**
+*
+*
+********** MAIN HOME PAGE ******************
+*
+*
+*/
+
+/*no padding or margin on body of home page */
+#main-body {
+  margin: 0;
+  padding: 0;
+}
+
+.heading-text {
+  font-family: Gameplay, sans-serif;
+  font-size: 6rem;
+  /* margin: 3.8rem 0 0 0; */
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  color: white;
+  vertical-align: middle;
+  letter-spacing: 3vw;
+  height: 25vh;
+}
+
+/*moving text*/
+.main-text {
+  font-size: 8vw;
+}
+
+/*My name (still text)*/
+.main-text-static {
+  width: 100vw;
+  font-size: 7vw;
+}
+
+.mobile-heading {
+  visibility: hidden;
+  
+  font-family: Gameplay, sans-serif;
+  font-size: 3rem;
+  /* margin: 3.8rem 0 0 0; */
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  color: white;
+  vertical-align: middle;
+  letter-spacing: 3vw;
+  width: 100vw;
+}
+
+.main-item {
+  height: 25vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/*setting the background colours for each heading div */
+.main-item:nth-child(1){
+  background-color: var(--pink);
+}
+
+.main-item:nth-child(2){
+  background-color: var(--darkblue);
+}
+
+.main-item:nth-child(3){
+  background-color: var(--lightblue);
+}
+
+.main-item:nth-child(4){
+  background-color: var(--green);
+}
+
+/*animation for moving right*/
+.moving-right {
+  -webkit-animation: textslide 15s linear infinite; /* To work on more browsers */
+  white-space: nowrap; /*allows text to stay in a single line*/
+  animation: textslide 15s linear infinite;
+}
+
+/* To work on more browsers*/
+@-webkit-keyframes textslide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1300px;
+  }
+}
+
+@keyframes textslide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1300px;
+  }
+}
+
+/*moving right slowly */
+.moving-right-slow {
+  animation-delay: 3s;
+  -webkit-animation: textslideslow 15s linear infinite; /* To work on more browsers */
+  white-space: nowrap; /*allows text to stay in a single line*/
+  animation: textslideslow 15s linear infinite;
+}
+
+/* To work on more browsers*/
+@-webkit-keyframes textslideslow {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1000px;
+  }
+}
+
+@keyframes textslideslow {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1000px;
+  }
+}
+
+
+/*animation for moving left*/
+.moving-left{
+  -webkit-animation: slidetext 15s linear infinite; /* To work on more browsers*/
+  white-space: nowrap; /*allows text to stay in a single line*/
+  animation: slidetext 15s linear infinite;
+}
+
+/*changing the position value impacts the speed of the animation */
+/*larger value = faster movement */
+@-webkit-keyframes slidetext {
+  from {
+    left: 0;
+  }
+  to {
+    left: -1000px;
+  }
+}
+
+@keyframes slidetext{
+  from {
+    left: 0;
+  }
+  to {
+    left: -1000px;
+  }
+}
+
+
+
+/**
+*
+*
+********** DAY AND NIGHT PAGES ******************
+*
+*
+*/
+
+
+
+.nav-home {
+  left: -3vw;
+  top: 24vh;
+  font-family: Gameplay;
+  font-size: 1.3vw;
+  transform: rotate(-90deg);
+  position: fixed;
+  z-index: 99;
+  color: var(--green);
+  letter-spacing: 0.5vh;
+  text-shadow: 3px -3px 9px #0078a6;
+}
+
+.heading {
+  font-family: CatV,sans-serif;
+  font-size: 10.5vw;
+  text-align: center;
+  letter-spacing: .5em;
+  margin-top: 2vw;
+  margin-bottom: 9vw;
+  margin-left:4.3vw;
+}
+
+/*different coloured text shadows for headings*/
+.heading-night {
+  color: var(--pink);
+  text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff;
+}
+
+.heading-day {
+  color: white;
+  text-shadow: 3px -3px 0px var(--lightblue), 6px -5px 0px var(--green), 9px -9px 14px #0078a6,1px -1px 20px #0078a6;
+}
+
+/*to prevent changing language sized from affection position of grid*/
+.language-container {
+  margin: -8.5vw 0 5vw 0vh;
+  height: 3vw;
+  font-size: 3vw;
+  text-align: center;
+}
+
+.language-night {
+  color: var(--pink);
+  text-shadow: 0 0 14px var(--darkblue);
+ 
+}
+
+/*adding pseudo-element for animation to work*/
+.language-night:after {
+  content:"";
+  animation: change-night 5s linear infinite normal;
+  -webkit-animation: change-night 5s linear infinite normal; /* To work on more browsers*/
+}
+
+/* The animation code */
+@keyframes change-night {
+  0%   {content:"夜";} /*Japanese*/
+  16.6%  {content:"रात";}/*Hindi*/
+  33.3%  {content:"tói";}/*Vietnamese*/
+  50% {content:"ليل";}/*Arabic*/
+  66.6% {content:"晚";}/*Chinese*/
+  83.3% {content:"밤";}/*Korean*/
+  100% {content:"nuit";}/*French*/
+}
+
+@-webkit-keyframes change-night {
+   0%   {content:"夜";} /*Japanese*/
+  16.6%  {content:"रात";}/*Hindi*/
+  33.3%  {content:"tói";}/*Vietnamese*/
+  50% {content:"ليل";}/*Arabic*/
+  66.6% {content:"晚";}/*Chinese*/
+  83.3% {content:"밤";}/*Korean*/
+  100% {content:"nuit";}/*French*/
+}
+
+.language-day {
+  color: white;
+  text-shadow: 0vw 0 5px white;
+}
+
+.language-day:after {
+  content:"";
+  animation: change-day 5s linear infinite normal;
+  -webkit-animation: change-day 5s linear infinite normal; /* To work on more browsers*/
+}
+
+/* The animation code */
+@keyframes change-day {
+   0%   {content:"昼";}/*Japanese*/
+  16.6%  {content:"दिन";}/*Hindi*/
+  33.3%  {content:"ngày";}/*Vietnamese*/
+  50% {content:"نهار";}/*Arabic*/
+  66.6% {content:"日";}/*Chinese*/
+  83.3% {content:"하루";}/*Korean*/
+  100% {content:"la journée";}/*french*/
+}
+
+@-webkit-keyframes change-day {
+   0%   {content:"昼";}/*Japanese*/
+  16.6%  {content:"दिन";}/*Hindi*/
+  33.3%  {content:"ngày";}/*Vietnamese*/
+  50% {content:"نهار";}/*Arabic*/
+  66.6% {content:"日";}/*Chinese*/
+  83.3% {content:"하루";}/*Korean*/
+  100% {content:"la journée";}/*French*/
+}
+
+.language-about {
+  color: var(--green);
+  text-shadow: 0vw 0 5px white;
+}
+
+.language-about:after {
+  content:"";
+  animation: change-about 5s linear infinite normal;
+  -webkit-animation: change-about 5s linear infinite normal; /* To work on more browsers*/
+}
+
+/* The animation code */
+@keyframes change-about {
+    0%   {content:"人格";}/*Japanese*/
+  16.6%  {content:"विवरण";}/*Hindi*/
+  33.3%  {content:"Về em";}/*Vietnamese*/
+  50% {content:"شخصية";}/*Arabic*/
+  66.6% {content:"个性";}/*Chinese*/
+  83.3% {content:"성격";}/*Korean*/
+  100% {content:"personnalité";}/*French*/
+}
+
+@-webkit-keyframes change-about {
+   0%   {content:"人格";}/*Japanese*/
+  16.6%  {content:"विवरण";}/*Hindi*/
+  33.3%  {content:"Về em";}/*Vietnamese*/
+  50% {content:"شخصية";}/*Arabic*/
+  66.6% {content:"个性";}/*Chinese*/
+  83.3% {content:"성격";}/*Korean*/
+  100% {content:"personnalité";}/*French*/
+}
+
+
+/************
+*
+* GRIDS
+*
+*
+**/
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 3vw;
+}
+
+.grid {
+  display: flex;
+
+}
+.grid-col {
+    flex: 1;
+    padding: 0 .1em; /**right - left padding **/
+  }
+
+/*third column available if needed*/
+.grid-col--2, .grid-col--3 {
+  display: none;
+}
+
+/*overlay text*/
+.subheading{
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*the overlay rectangle*/
+.info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #677C82;
+}
+
+.grid-item {
+  position: relative;
+}
+/*changing opacity when grid is hovered on */
+.grid-item:hover .info{
+  opacity: 0.6;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 90%; /**shrinking the contents when you get to this width**/
+  }
+
+/*  .grid-col--2 {
+    display: block;*/ /**changing it to 3 col if needed**/
+ /* }*/
+  .grid-col {
+    padding: 0 .5em; 
+  }
+   .grid-item {
+    margin-bottom: .8em; 
+  }
+  }
+
+/*sidebar*/
+nav{
+  z-index: 20;
+  width: 100%;
+}
+
+/*sidebar links*/
+a{
+  text-decoration: none;
+}
+
+li {
+  margin-bottom: 2vh;
+}
+
+ul {
+  list-style-type: none;
+  color: white;
+}
+
+/*the floating sidebar with fixed position containing contact links*/
+#external-links{
+  bottom: 4vh;
+  right: 2.3vw;
+  position: fixed;
+}
+
+.link-icons {
+  width: 2.5vw;
+  height: auto;
+  box-shadow:3px -7px 71px #0078a6, 3px 13px 87px #0078a6;
+  border-radius: 11px;
+}
+
+
+/**
+*
+*
+********** ABOUT ******************
+*
+*
+*/
+
+
+/*image of me*/
+.me {
+  width: 40vw;
+  height: auto;
+  margin-left: 22vw;
+  margin-top:0vh;
+  float: left;
+}
+
+.heading-about {
+  color: var(--green);
+  text-shadow: 3px -3px 0px white, 9px -9px 23px #0078a6, 0px 14px 45px #0078a6;
+}
+
+/*description of me*/
+#description {
+  width: 68vw;
+  height: auto;
+  float: left;
+  margin: 31vw 0 3vw -53vw;
+  text-shadow: 0 0 1.5px white;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.5vw;
+  color: white;
+  text-align: center;
+}
+
+/*bigger text to grab attention and summarise*/
+#emphasis p {
+  font-size: 1.8vw;
+}
+
+/*hobbies list*/
+#hobbies {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.5vw;
+  color: white;
+  text-align: center;
+  text-decoration-color: var(--green);
+  margin-top: 3vh;
+}
+
+/*spacing between list elements*/
+.hobby {
+  margin-top: -1vh;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-text-static {
+    font-size: 7.3vw;
+    /* margin-top: 1vw; */
+  }
+}
+
+@media only screen and (max-width: 798px) {
+  /**DAY NIGHT ABOUT**/
+  .grid {
+    display: block; /**makes images stack on top of each other*/
+  }
+
+  .heading {
+    font-size: 17vw;
+    margin-top: 13vw;
+    margin-bottom: 9vw;
+    margin-left:4.5vw;
+  }
+
+  .language-container {
+    margin: -8.5vw 0 12vw 0vh;
+    height: 3vw;
+    font-size: 6.5vw;
+    text-align: center;
+  }
+
+  .me {
+    width: 62vw;
+    margin-left: 11vw;
+  }
+
+#description {
+  width: 76vw;
+  margin: 5vw 0 3vw 3vw;
+  font-size: 2.5vw;
+}
+
+#emphasis p {
+  font-size: 3.3vw;
+}
+
+#hobbies {
+  font-size: 2.5vw;
+}
+
+.nav-home {
+  visibility: hidden;
+}
+
+#external-links {
+  visibility: hidden;
+}
+/*INDEX*/
+
+.main-text-static {
+  /* visibility: hidden; */
+}
+
+.main-text-static {
+  visibility: hidden;
+}
+
+/*moving text*/
+.main-text {
+  font-size: 4rem;
+}
+
+.mobile-heading {
+  visibility: visible;
+  /* margin: 3.3rem 0 0 0;
+  font-size: 4rem; */
+}
+}
+
+@media (min-width: 550px) and (max-width: 798px) {
+  .mobile-heading {
+    margin: 3.3rem 0 0 0;
+    font-size: 4rem;
+  
+  }
+}
+
+@media only screen and (max-height: 736px) {
+  .main-text {
+    font-size: 3rem;
+    /* margin: 3vw 0 0 6vw;
+  }
+
+  .mobile-heading {
+    margin: 1.8rem 0 0 0;
+    /* font-size: 3rem; */
+  
+  }
+}
