@@ -59,7 +59,7 @@ img {
 .heading-text {
   font-family: Gameplay, sans-serif;
   font-size: 6rem;
-  /* margin: 3.8rem 0 0 0; */
+  margin: 3.8rem 0 0 0;
   text-align: center;
   white-space: nowrap;
   position: absolute;
@@ -240,7 +240,7 @@ img {
 /*different coloured text shadows for headings*/
 .heading-night {
   color: var(--pink);
-  text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff;
+  text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff, 4px -10px 17px var(--darkblue);
 }
 
 .heading-day {
@@ -540,11 +540,15 @@ ul {
     display: block; /**makes images stack on top of each other*/
   }
 
+  .container {
+    width: 100%
+  }
+
   .heading {
     font-size: 17vw;
     margin-top: 13vw;
     margin-bottom: 9vw;
-    margin-left:4.5vw;
+    margin-left:5.5vw;
   }
 
   .language-container {
@@ -555,8 +559,8 @@ ul {
   }
 
   .me {
-    width: 62vw;
-    margin-left: 11vw;
+    width: 78vw;
+    margin-left: 3vw;
   }
 
 #description {
@@ -599,12 +603,13 @@ ul {
   visibility: visible;
   /* margin: 3.3rem 0 0 0;
   font-size: 4rem; */
+  margin-top: 1.3rem;
 }
 }
 
 @media (min-width: 550px) and (max-width: 798px) {
   .mobile-heading {
-    margin: 3.3rem 0 0 0;
+    margin: 1.3rem 0 0 0;
     font-size: 4rem;
   
   }

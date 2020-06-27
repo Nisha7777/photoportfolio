@@ -137,7 +137,7 @@ line-height:1.1em;
 .lb-data .lb-caption {
 font-size:2vw;
 font-weight:700;
-line-height:1em;
+line-height:2em;
 }
 
 .lb-data .lb-caption a {
@@ -183,4 +183,22 @@ clear:both;
 .lb-nav a.lb-prev:hover,.lb-nav a.lb-next:hover {
 filter:alpha(Opacity=100);
 opacity:1;
+}
+
+/* a.lb-next :after {
+    background-image: url('arrow.jpg');
+    width: 2rem;
+    height: auto;
+    position: absolute;
+    top:150px;
+} */
+
+@media only screen and (max-width: 798px) {
+    .lb-data .lb-caption {
+        font-size:6vw;
+        }
+
+    .lb-data .lb-number {
+        font-size:4vw;
+     }
 }

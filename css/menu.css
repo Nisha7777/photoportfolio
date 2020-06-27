@@ -178,12 +178,23 @@
     transition: color 0.4s ease; /*adding a transition to the colour of the text*/
 }
 
+.menu-contact {
+    margin-left: -42px;
+}
+
 .menu-wrap .menu > div > div > ul > li > .menu-contact > li {
     display: inline;
 }
 
-.menu-wrap .menu > div > div > ul > li > .menu-contact > li > .menu-link-icons{
-    width: 1rem;
+/* .menu-wrap .menu > div > div > ul > li > .menu-contact > li > .menu-link-icons{
+    width: 1.5rem;
+    height: auto;
+    box-shadow:3px -7px 71px #0078a6, 3px 13px 87px #0078a6;
+    border-radius: 11px;
+} */
+
+.menu-link-icons {
+    width: 2.5rem;
     height: auto;
     box-shadow:3px -7px 71px #0078a6, 3px 13px 87px #0078a6;
     border-radius: 11px;
