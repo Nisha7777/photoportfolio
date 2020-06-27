@@ -245,7 +245,7 @@ img {
 
 .heading-day {
   color: white;
-  text-shadow: 3px -3px 0px var(--lightblue), 6px -5px 0px var(--green), 9px -9px 14px #0078a6,1px -1px 20px #0078a6;
+  text-shadow: 3px -3px 0px var(--lightblue), 6px -5px 0px var(--green), 9px -9px 14px #0078a6,1px -1px 20px #0078a6,1px -1px 20px #1bace3;
 }
 
 /*to prevent changing language sized from affection position of grid*/
@@ -258,7 +258,7 @@ img {
 
 .language-night {
   color: var(--pink);
-  text-shadow: 0 0 14px var(--darkblue);
+  text-shadow: 0 0 14px var(--darkblue), 4px -10px 37px #a8b3ff;
  
 }
 
@@ -292,7 +292,7 @@ img {
 
 .language-day {
   color: white;
-  text-shadow: 0vw 0 5px white;
+  text-shadow: 0vw 0 8px white;
 }
 
 .language-day:after {
