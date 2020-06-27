@@ -240,7 +240,7 @@ img {
 /*different coloured text shadows for headings*/
 .heading-night {
   color: var(--pink);
-  text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff, 4px -10px 17px var(--darkblue);
+  text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff;
 }
 
 .heading-day {
@@ -549,6 +549,12 @@ ul {
     margin-top: 13vw;
     margin-bottom: 9vw;
     margin-left:5.5vw;
+  }
+
+  /*different coloured text shadows for headings*/
+  .heading-night {
+   color: var(--pink);
+    text-shadow: 3px -3px 0px white, 6px -9px 21px var(--darkblue), 4px -10px 68px #a8b3ff, 4px -10px 17px var(--darkblue);
   }
 
   .language-container {
